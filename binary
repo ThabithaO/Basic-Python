@@ -1,0 +1,23 @@
+def binary_search(angka,L):
+    L.sort()
+    ketemu = False
+    awal = 0
+    akhir = len(L)-1
+
+    while awal <= akhir and not ketemu:
+        tengah = (awal+akhir)//2
+        if L[tengah] == angka:
+            ketemu = True
+        elif angka > L[tengah]:
+            awal = tengah+1
+        else:
+            akhir = tengah-1
+            
+    if ketemu:
+        print("Angka", angka, "ditemukan!")
+        print("Posisi angka yang ditemukan adalah %s" % str(awal+1))
+    else:
+        print("Angka yang Anda maksud tidak ditemukan!")
+        print("Anda telah mencari sebanyak", str(awal+1, "index"))
+                  
+binary_search(45,[67, 13, 71, 39, 45, 28, 43])
