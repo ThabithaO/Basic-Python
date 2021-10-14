@@ -1,0 +1,24 @@
+def insertionSort(L):
+    i = 0
+    while i < len(L):
+        Ka = L[i]
+        Ki = i - 1
+        i += 1
+        while Ki >= 0 and L[Ki] > Ka:
+            L[Ki + 1] = L[Ki]
+            Ki -= 1
+        L[Ki + 1] = Ka
+
+pjL = int(input("Panjang list yang diinginkan = "))
+i = 1
+L = []
+while i <= pjL:
+    data = int(input("Masukan data yang ke %i untuk list L = "%i))
+    L.append(data)
+    i += 1
+        
+print("Sebelum di insertion sort =")
+print(L)
+insertionSort(L)
+print("Setelah di insertion sort =")
+print(L)
