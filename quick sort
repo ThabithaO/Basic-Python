@@ -1,0 +1,20 @@
+def QuickSort(L, awal, akhir):
+    if awal < akhir:
+        pindex = partition(L, awal, akhir)
+        QuickSort(L, awal, pindex-1)
+        QuickSort(L, pindex+1, akhir)
+
+def partition(L, awal, akhir):
+    pivot = L[akhir]
+    pindex = awal-1
+    for i in range(awal, akhir):
+        if (L[i] <= pivot):
+            L[i], L[pindex] = L[pindex], L[i]
+            pindex += 1
+    L[pindex+1], L[akhir] = L[akhir], L[pindex+1]
+    return pindex+1
+
+L = [67, 13, 71, 39, 45, 3, -7, 1, 0, 69, 22]
+print("Sebelum diurutkan :", L)
+QuickSort(L, 0, len(L)-1)
+print("Setelah diurutkan :", L)
