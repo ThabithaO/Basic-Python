@@ -1,0 +1,26 @@
+def selectionSort(L):
+    i = len(L)-1
+    while i > 0:
+        max = 0
+        j = 1
+        while j <= i:
+            maxt = L[max]
+            if maxt < L[j]:
+                max = j
+            j += 1
+        L[max], L[i] = L[i], L[max]
+        i -= 1
+        
+pjL = int(input("Panjang list yang diinginkan = "))
+i = 1
+L = []
+while i <= pjL:
+    data = int(input("Masukan data yang ke %i untuk list L = "%i))
+    L.append(data)
+    i += 1
+
+print("Sebelum diurutkan :")
+print(L)
+selectionSort(L)
+print("Setelah diurutkan :")
+print(L)
